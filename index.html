@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تتبع التمارين | Workout Tracker</title>
+    <!-- Google Fonts for Modern Minimalist Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Noto+Kufi+Arabic:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for minimal icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <h1 class="logo-text">A E S T H E T I C <span class="divider">|</span> F I T</h1>
+                <p class="logo-sub">مفكرة تمارين أسبوعية مبسطة</p>
+            </div>
+            
+            <div class="header-actions">
+                <!-- Notifications -->
+                <button id="notification-btn" class="icon-btn" title="تفعيل التنبيهات اليومية">
+                    <i class="fa-regular fa-bell"></i>
+                </button>
+                
+                <!-- Export/Import Dropdown -->
+                <div class="dropdown">
+                    <button class="icon-btn" id="dropdown-btn" title="البيانات والنسخ الاحتياطي">
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-menu">
+                        <button id="export-json-btn"><i class="fa-solid fa-file-code"></i> تصدير JSON</button>
+                        <button id="export-csv-btn"><i class="fa-solid fa-file-csv"></i> تصدير CSV</button>
+                        <button id="import-btn-trigger"><i class="fa-solid fa-file-import"></i> استيراد نسخة</button>
+                        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                        <button id="reset-btn" class="danger-action"><i class="fa-solid fa-trash-can"></i> إعادة تعيين بالكامل</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Weekly Progress Indicator -->
+        <section class="weekly-overview">
+            <div class="progress-info">
+                <span>الإنجاز الأسبوعي الإجمالي</span>
+                <span id="weekly-percentage-text">0%</span>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="weekly-progress-fill" style="width: 0%;"></div>
+            </div>
+        </section>
+
+        <!-- Week Days Grid (7 Days) -->
+        <nav class="days-nav" aria-label="أيام الأسبوع">
+            <div class="days-grid" id="days-grid">
+                <!-- Days will be dynamically injected by JS, styled like:
+                <button class="day-card active" data-day="0">
+                    <span class="day-name">السبت</span>
+                    <span class="day-workout-type">دفع</span>
+                    <span class="day-status-dot done"></span>
+                </button>
+                -->
+            </div>
+        </nav>
+
+        <!-- Main Display for Selected Day -->
+        <main class="main-content">
+            <div class="day-header">
+                <div class="day-title-wrapper">
+                    <h2 id="current-day-name">السحب (Pull Day)</h2>
+                    <p id="current-day-focus" class="day-focus-label">ظهر وبايسبس</p>
+                </div>
+                <div class="day-progress-wrapper">
+                    <span id="day-percentage-text">0/0 مكتمل</span>
+                    <div class="mini-progress-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" id="day-progress-circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exercises List -->
+            <section class="exercises-section">
+                <div class="section-title-bar">
+                    <h3>قائمة التمارين</h3>
+                    <button id="show-add-modal-btn" class="text-btn"><i class="fa-solid fa-plus"></i> إضافة تمرين</button>
+                </div>
+                <div class="exercises-list" id="exercises-list">
+                    <!-- Exercises injected dynamically:
+                    <div class="exercise-item">
+                        <div class="exercise-check-wrapper">
+                            <label class="custom-checkbox">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="exercise-details">
+                                <span class="exercise-name">سحب علوي (Lat Pulldown)</span>
+                                <span class="exercise-meta">4 جولات × 10 تكرار</span>
+                            </div>
+                        </div>
+                        <div class="exercise-inputs">
+                            <div class="input-group">
+                                <input type="number" class="weight-input" placeholder="0" value="70">
+                                <span class="input-unit">كجم</span>
+                            </div>
+                            <button class="delete-exercise-btn"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Notification Toast -->
+        <div id="toast" class="toast hidden"></div>
+
+        <!-- Add Exercise Modal (Minimalist Dialog Overlay) -->
+        <div class="modal-overlay hidden" id="add-exercise-modal">
+            <div class="modal-card">
+                <div class="modal-header">
+                    <h4>إضافة تمرين جديد</h4>
+                    <button id="close-modal-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <form id="add-exercise-form" class="modal-form">
+                    <div class="form-group">
+                        <label for="new-exercise-name">اسم التمرين</label>
+                        <input type="text" id="new-exercise-name" placeholder="مثال: بنش برس مستوي" required autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="new-exercise-sets">عدد الجولات (Sets)</label>
+                            <input type="number" id="new-exercise-sets" min="1" max="20" value="3" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="new-exercise-reps">التكرارات (Reps)</label>
+                            <input type="text" id="new-exercise-reps" placeholder="مثال: 8-10 أو 12" value="10" required>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancel-modal-btn" class="btn btn-secondary">إلغاء</button>
+                        <button type="submit" class="btn btn-primary">حفظ التمرين</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script src="script.js"></script>
+</body>
+</html>
