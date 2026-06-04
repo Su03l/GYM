@@ -4,68 +4,68 @@
 
 // 1. USER'S SPECIFIC WEEKLY PLAN
 const weeklyPlan = {
-  day1: { // الثلاثاء
+  day1: { // الثلاثاء: Back + Biceps + Triceps
     title: "Back + Biceps + Triceps",
     exercises: [
-      { name: "Lat Pulldown", sets: 3, reps: 12, weight: "25kg", image: "lat-pulldown.jpg" },
-      { name: "Seated Cable Row", sets: 3, reps: 12, weight: "20kg", image: "seated-row.jpg" },
-      { name: "Barbell Row", sets: 3, reps: 10, weight: "20kg", image: "barbell-row.jpg" },
-      { name: "Face Pulls", sets: 3, reps: 15, weight: "7kg", image: "face-pull.jpg" },
-      { name: "Cable Bicep Curls", sets: 3, reps: 12, weight: "10kg", image: "cable-curl.jpg" },
-      { name: "Hammer Curls", sets: 3, reps: 12, weight: "8kg", image: "hammer-curl.jpg" },
-      { name: "Triceps Cable Pushdown", sets: 3, reps: 12, weight: "10kg", image: "tricep-pushdown.jpg" },
-      { name: "Overhead Tricep Extension", sets: 3, reps: 12, weight: "8kg", image: "overhead-ext.jpg" }
+      { name: "Lat Pulldown (Machine) - ظهر علوي", sets: 3, reps: 15, weight: "20kg" },
+      { name: "Seated Cable Row - ظهر وسط", sets: 3, reps: 15, weight: "15kg" },
+      { name: "Machine Row (Chest Supported) - ظهر", sets: 3, reps: 15, weight: "15kg" },
+      { name: "Cable Face Pulls - كتف خلفي", sets: 3, reps: 15, weight: "5kg" },
+      { name: "Cable Bicep Curls (Rope) - بايسبس", sets: 3, reps: 15, weight: "7kg" },
+      { name: "Machine Bicep Curl - بايسبس", sets: 3, reps: 15, weight: "10kg" },
+      { name: "Triceps Cable Pushdown (Rope) - ترايسبس", sets: 3, reps: 15, weight: "7kg" },
+      { name: "Machine Tricep Extension - ترايسبس", sets: 3, reps: 15, weight: "10kg" }
     ]
   },
-  day2: { // الأربعاء
+  day2: { // الأربعاء: Cardio
     title: "Cardio",
-    exercises: [{ name: "Treadmill", duration: "50 min", incline: 0, image: "treadmill.jpg" }]
+    exercises: [{ name: "Stationary Bike (Back Supported) - كارديو", duration: "45 min", intensity: "Low" }]
   },
-  day3: { // الخميس
-    title: "Legs + Abs",
+  day3: { // الخميس: Legs + Abs
+    title: "Legs + Abs (Knee Friendly)",
     exercises: [
-      { name: "Leg Press", sets: 3, reps: 12, weight: "40kg", image: "leg-press.jpg" },
-      { name: "Leg Extensions", sets: 3, reps: 12, weight: "15kg", image: "leg-ext.jpg" },
-      { name: "Leg Curls", sets: 3, reps: 12, weight: "15kg", image: "leg-curl.jpg" },
-      { name: "Calf Raises", sets: 4, reps: 15, weight: "20kg", image: "calf-raise.jpg" },
-      { name: "Plank", sets: 3, reps: "60s", weight: "BW", image: "plank.jpg" },
-      { name: "Leg Raises", sets: 3, reps: 15, weight: "BW", image: "leg-raise.jpg" },
-      { name: "Russian Twist", sets: 3, reps: 20, weight: "BW", image: "russian-twist.jpg" },
-      { name: "Crunches", sets: 3, reps: 15, weight: "BW", image: "crunch.jpg" }
+      { name: "Leg Press (Limited Range) - أفخاذ أمامية", sets: 3, reps: 15, weight: "30kg" },
+      { name: "Seated Leg Extension - أفخاذ أمامية", sets: 3, reps: 15, weight: "10kg" },
+      { name: "Seated Leg Curl - أفخاذ خلفية", sets: 3, reps: 15, weight: "10kg" },
+      { name: "Seated Calf Raises - بطات", sets: 3, reps: 20, weight: "15kg" },
+      { name: "Machine Ab Crunch - بطن", sets: 3, reps: 15, weight: "10kg" },
+      { name: "Captain's Chair (Knee Raise) - بطن", sets: 3, reps: 12, weight: "BW" },
+      { name: "Cable Woodchoppers (Abs) - بطن جانبي", sets: 3, reps: 15, weight: "5kg" },
+      { name: "Machine Torso Rotation - بطن وجوانب", sets: 3, reps: 15, weight: "10kg" }
     ]
   },
-  day4: { // الجمعة
+  day4: { // الجمعة: Cardio
     title: "Cardio",
-    exercises: [{ name: "Treadmill", duration: "50 min", incline: 0, image: "treadmill.jpg" }]
+    exercises: [{ name: "Stationary Bike (Back Supported) - كارديو", duration: "45 min", intensity: "Low" }]
   },
-  day5: { // السبت
+  day5: { // السبت: Chest + Shoulders
     title: "Chest + Shoulders",
     exercises: [
-      { name: "Dumbbell Chest Press", sets: 3, reps: 12, weight: "12kg", image: "chest-press.jpg" },
-      { name: "Incline Dumbbell Press", sets: 3, reps: 12, weight: "10kg", image: "incline-press.jpg" },
-      { name: "Cable Chest Flys", sets: 3, reps: 15, weight: "5kg", image: "chest-fly.jpg" },
-      { name: "Dips", sets: 3, reps: 10, weight: "BW", image: "dips.jpg" },
-      { name: "Dumbbell Shoulder Press", sets: 3, reps: 12, weight: "10kg", image: "shoulder-press.jpg" },
-      { name: "Lateral Raises", sets: 4, reps: 15, weight: "4kg", image: "lateral-raise.jpg" },
-      { name: "Front Raises", sets: 3, reps: 12, weight: "4kg", image: "front-raise.jpg" },
-      { name: "Rear Delt Fly", sets: 3, reps: 15, weight: "4kg", image: "rear-delt.jpg" }
+      { name: "Chest Press Machine - صدر", sets: 3, reps: 15, weight: "15kg" },
+      { name: "Incline Chest Press Machine - صدر علوي", sets: 3, reps: 15, weight: "10kg" },
+      { name: "Pec Deck (Chest Fly) - صدر (تجميع)", sets: 3, reps: 15, weight: "5kg" },
+      { name: "Cable Chest Flys - صدر", sets: 3, reps: 15, weight: "5kg" },
+      { name: "Shoulder Press Machine - كتف أمامي", sets: 3, reps: 15, weight: "10kg" },
+      { name: "Lateral Raises (Machine) - كتف جانبي", sets: 3, reps: 15, weight: "3kg" },
+      { name: "Front Raise (Cable) - كتف أمامي", sets: 3, reps: 15, weight: "3kg" },
+      { name: "Rear Delt Machine (Fly) - كتف خلفي", sets: 3, reps: 15, weight: "5kg" }
     ]
   },
-  day6: { // الأحد
+  day6: { // الأحد: Full Body Light
     title: "Full Body Light",
     exercises: [
-      { name: "Lat Pulldown", sets: 2, reps: 15, weight: "15kg", image: "lat-pulldown.jpg" },
-      { name: "Chest Press", sets: 2, reps: 15, weight: "15kg", image: "chest-press.jpg" },
-      { name: "Leg Press", sets: 2, reps: 15, weight: "20kg", image: "leg-press.jpg" },
-      { name: "Lateral Raises", sets: 2, reps: 15, weight: "2kg", image: "lateral-raise.jpg" },
-      { name: "Bicep Curls", sets: 2, reps: 15, weight: "5kg", image: "cable-curl.jpg" },
-      { name: "Tricep Pushdown", sets: 2, reps: 15, weight: "5kg", image: "tricep-pushdown.jpg" },
-      { name: "Plank", sets: 2, reps: "45s", weight: "BW", image: "plank.jpg" }
+      { name: "Lat Pulldown - ظهر", sets: 2, reps: 15, weight: "15kg" },
+      { name: "Chest Press Machine - صدر", sets: 2, reps: 15, weight: "15kg" },
+      { name: "Leg Press (Very Light) - أرجل", sets: 2, reps: 15, weight: "20kg" },
+      { name: "Lateral Raises - كتف جانبي", sets: 2, reps: 15, weight: "2kg" },
+      { name: "Bicep Curls (Cable) - بايسبس", sets: 2, reps: 15, weight: "5kg" },
+      { name: "Tricep Pushdown - ترايسبس", sets: 2, reps: 15, weight: "5kg" },
+      { name: "Machine Ab Crunch - بطن", sets: 2, reps: 15, weight: "5kg" }
     ]
   },
-  day7: { // الاثنين
+  day7: { // الاثنين: Recovery Cardio
     title: "Recovery Cardio",
-    exercises: [{ name: "Treadmill", duration: "40 min", incline: 0, image: "treadmill.jpg" }]
+    exercises: [{ name: "Stationary Bike - كارديو", duration: "30 min", intensity: "Low" }]
   }
 };
 
@@ -96,9 +96,20 @@ function initApp() {
     checkScheduledReminder();
 }
 
+const CURRENT_PLAN_VERSION = 'v4_machine_focus';
+
 // Make sure every day has a state saved in localStorage.
 // Uses user's required naming convention: 'workout-data-day1', 'workout-data-day2', etc.
 function setupDefaultDayStates() {
+    // Version check to automatically upgrade user's cached plan when changed
+    const savedVersion = localStorage.getItem('workout_plan_version');
+    if (savedVersion !== CURRENT_PLAN_VERSION) {
+        dayIds.forEach(dayId => {
+            localStorage.removeItem(`workout-data-${dayId}`);
+        });
+        localStorage.setItem('workout_plan_version', CURRENT_PLAN_VERSION);
+    }
+
     dayIds.forEach(dayId => {
         const key = `workout-data-${dayId}`;
         const savedData = localStorage.getItem(key);
@@ -115,6 +126,7 @@ function setupDefaultDayStates() {
                     reps: ex.reps || null,
                     duration: ex.duration || null,
                     incline: ex.incline !== undefined ? ex.incline : null,
+                    intensity: ex.intensity || null,
                     targetWeight: ex.weight || null,
                     actualWeight: "",
                     completed: false,
@@ -212,11 +224,11 @@ function getExerciseImage(name, localImage) {
     const term = name.toLowerCase();
 
     // Map keywords to high-quality, dark-themed Unsplash fitness photos
-    if (term.includes('treadmill') || term.includes('cardio')) {
-        return 'https://images.unsplash.com/photo-1578762560072-4a332a5b1d98?auto=format&fit=crop&w=300&q=80'; // Treadmill/Cardio
+    if (term.includes('treadmill') || term.includes('cardio') || term.includes('bike') || term.includes('walking')) {
+        return 'https://images.unsplash.com/photo-1578762560072-4a332a5b1d98?auto=format&fit=crop&w=300&q=80'; // Treadmill/Cardio/Bike/Walking
     }
-    if (term.includes('bench press') || term.includes('chest press') || term.includes('dumbbell chest') || term.includes('incline dumbbell')) {
-        return 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=300&q=80'; // Chest Press/Fly
+    if (term.includes('bench press') || term.includes('chest press') || term.includes('dumbbell chest') || term.includes('incline dumbbell') || term.includes('pec deck')) {
+        return 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=300&q=80'; // Chest Press/Fly/Pec Deck
     }
     if (term.includes('cable chest') || term.includes('flys') || term.includes('dips')) {
         return 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=300&q=80'; // Chest Fly/Dips
@@ -242,8 +254,8 @@ function getExerciseImage(name, localImage) {
     if (term.includes('shoulder') || term.includes('lateral raise') || term.includes('front raise') || term.includes('rear delt')) {
         return 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=300&q=80'; // Shoulders
     }
-    if (term.includes('plank') || term.includes('leg raise') || term.includes('twist') || term.includes('crunch') || term.includes('abs')) {
-        return 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=300&q=80'; // Abs/Plank
+    if (term.includes('plank') || term.includes('leg raise') || term.includes('twist') || term.includes('crunch') || term.includes('abs') || term.includes('dead bug') || term.includes('bird-dog') || term.includes('chair') || term.includes('knee raise') || term.includes('torso') || term.includes('rotation') || term.includes('woodchopper')) {
+        return 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=300&q=80'; // Abs/Plank/Dead Bug/Bird Dog/Captain's Chair/Torso Rotation
     }
     if (term.includes('stretch') || term.includes('mobility')) {
         return 'https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?auto=format&fit=crop&w=300&q=80'; // Yoga/Mobility
@@ -323,6 +335,7 @@ function renderActiveDay() {
                         ${ex.targetWeight ? `<div class="detail-meta-item"><strong>الوزن المستهدف:</strong> <span>${ex.targetWeight}</span></div>` : ''}
                         ${ex.duration ? `<div class="detail-meta-item"><strong>المدة (Duration):</strong> <span>${ex.duration}</span></div>` : ''}
                         ${ex.incline !== null && ex.incline !== undefined ? `<div class="detail-meta-item"><strong>الميل (Incline):</strong> <span>${ex.incline}%</span></div>` : ''}
+                        ${ex.intensity ? `<div class="detail-meta-item"><strong>الشّدّة (Intensity):</strong> <span>${ex.intensity === 'Low' ? 'منخفضة' : ex.intensity}</span></div>` : ''}
                         
                         <a href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(ex.name + ' gym exercise machine')}" 
                            target="_blank" class="google-search-link" onclick="event.stopPropagation()">
@@ -593,7 +606,7 @@ function exportToJSON() {
 // Export to CSV (Includes BOM for Arabic font formatting in Microsoft Excel)
 function exportToCSV() {
     let csv = "\ufeff"; // BOM
-    csv += "اليوم,نوع التمرين,مستهدف اليوم,اسم التمرين,الجولات,التكرارات,المدة,الميل,مستهدف الوزن,الوزن الفعلي,مكتمل\n";
+    csv += "اليوم,نوع التمرين,مستهدف اليوم,اسم التمرين,الجولات,التكرارات,المدة,الميل,الشّدّة,مستهدف الوزن,الوزن الفعلي,مكتمل\n";
     
     dayIds.forEach(dayId => {
         const data = getDayData(dayId);
@@ -611,6 +624,7 @@ function exportToCSV() {
                     ex.reps || "-",
                     ex.duration || "-",
                     ex.incline !== null ? ex.incline : "-",
+                    ex.intensity || "-",
                     ex.targetWeight || "-",
                     ex.actualWeight || "-",
                     ex.completed ? "نعم" : "لا"
