@@ -5,107 +5,114 @@
 // 1. USER'S SPECIFIC WEEKLY PLAN
 const weeklyPlan = {
   day1: {
-    title: "Chest + Shoulders + Triceps",
+    title: "Chest + Triceps",
     exercises: [
       { name: "Chest Press Machine - صدر مستوي", sets: 4, reps: 12 },
       { name: "Incline Chest Press Machine - صدر علوي", sets: 4, reps: 12 },
       { name: "Pec Deck Fly - صدر عزل", sets: 3, reps: 12 },
-      { name: "Shoulder Press Machine - أكتاف أمامي", sets: 4, reps: 12 },
-      { name: "Lateral Raise Machine - أكتاف جانبي", sets: 3, reps: 12 },
-      { name: "Rear Delt Machine - أكتاف خلفي", sets: 3, reps: 12 },
-      { name: "Tricep Pushdown - ترايسبس عزل", sets: 4, reps: 12 }
-    ],
-    cardio: {
-      elliptical: "10-15 min",
-      treadmill: "25-30 min"
-    }
+      { name: "Cable Chest Fly - صدر تجميع", sets: 3, reps: 12 },
+
+      { name: "Tricep Pushdown - ترايسبس", sets: 4, reps: 12 },
+      { name: "Overhead Cable Tricep Extension - ترايسبس طويل", sets: 3, reps: 12 },
+      { name: "Tricep Extension Machine - ترايسبس عزل", sets: 3, reps: 12 }
+    ]
   },
 
   day2: {
-    title: "Cardio",
-    exercises: [],
-    cardio: {
-      elliptical: "10-15 min",
-      treadmill: "25-40 min"
-    }
+    title: "Back + Biceps",
+    exercises: [
+      { name: "Lat Pulldown - ظهر علوي", sets: 4, reps: 12 },
+      { name: "Seated Cable Row - ظهر وسط", sets: 4, reps: 12 },
+      { name: "Machine Row - ظهر", sets: 4, reps: 12 },
+      { name: "Face Pull - كتف خلفي", sets: 3, reps: 12 },
+
+      { name: "Bicep Curl Machine - بايسبس", sets: 3, reps: 12 },
+      { name: "Hammer Curl - بايسبس هامر", sets: 3, reps: 12 },
+      { name: "Preacher Curl Machine - بايسبس", sets: 3, reps: 12 }
+    ]
   },
 
   day3: {
-    title: "Legs + Abs",
+    title: "Legs",
     exercises: [
-      { name: "Leg Press - دفع أرجل (أفخاذ عام)", sets: 4, reps: 12 },
-      { name: "Leg Extension - أفخاذ أمامية عزل", sets: 4, reps: 12 },
-      { name: "Leg Curl - أفخاذ خلفية عزل", sets: 4, reps: 12 },
-      { name: "Calf Raise - بطات (ساق)", sets: 4, reps: 15 },
-      { name: "Crunch Machine - بطن علوي", sets: 4, reps: 15 },
-      { name: "Plank - بطن ثبات", sets: 3, reps: "20-30 sec" }
-    ],
-    cardio: {
-      elliptical: "10-15 min",
-      treadmill: "25-30 min"
-    }
+      { name: "Leg Press - أفخاذ", sets: 4, reps: 12 },
+      { name: "Leg Extension - أفخاذ أمامية", sets: 4, reps: 12 },
+      { name: "Leg Curl - أفخاذ خلفية", sets: 4, reps: 12 },
+      { name: "Calf Raise - بطات", sets: 4, reps: 15 },
+      { name: "Walking Lunges - أرجل", sets: 3, reps: 12 },
+      { name: "Hip Abductor - خارج الفخذ", sets: 3, reps: 15 },
+      { name: "Hip Adductor - داخل الفخذ", sets: 3, reps: 15 }
+    ]
   },
 
   day4: {
-    title: "Cardio",
-    exercises: [],
-    cardio: {
-      elliptical: "10-15 min",
-      treadmill: "25-40 min"
-    }
+    title: "Shoulders",
+    exercises: [
+      { name: "Shoulder Press Machine - كتف أمامي", sets: 4, reps: 12 },
+      { name: "Lateral Raise Machine - كتف جانبي", sets: 4, reps: 12 },
+      { name: "Rear Delt Machine - كتف خلفي", sets: 4, reps: 12 },
+      { name: "Front Raise Cable - كتف أمامي", sets: 3, reps: 12 },
+      { name: "Upright Row Cable - أكتاف وترابيس", sets: 3, reps: 12 },
+      { name: "Cable Lateral Raise - كتف جانبي", sets: 3, reps: 12 }
+    ]
   },
 
   day5: {
-    title: "Back + Biceps + Triceps",
+    title: "Full Arms",
     exercises: [
-      { name: "Lat Pulldown - سحب ظهر علوي", sets: 4, reps: 12 },
-      { name: "Seated Row - سحب ظهر أرضي", sets: 4, reps: 12 },
-      { name: "Cable Row - سحب كيبل ظهر", sets: 4, reps: 12 },
-      { name: "Face Pull - كتف خلفي / أعلى الظهر", sets: 3, reps: 12 },
-      { name: "Bicep Curl - بايسبس عزل", sets: 3, reps: 12 },
-      { name: "Hammer Curl - بايسبس هامر", sets: 3, reps: 12 },
-      { name: "Tricep Pushdown - ترايسبس عزل", sets: 3, reps: 12 }
-    ],
-    cardio: {
-      elliptical: "10-15 min",
-      treadmill: "25-30 min"
-    }
+      // Biceps
+      { name: "Cable Curl - بايسبس", sets: 4, reps: 12 },
+      { name: "Hammer Curl - بايسبس", sets: 4, reps: 12 },
+
+      // Triceps
+      { name: "Tricep Pushdown - ترايسبس", sets: 4, reps: 12 },
+      { name: "Overhead Tricep Extension - ترايسبس", sets: 4, reps: 12 },
+
+      // Forearms
+      { name: "Wrist Curl - ساعد", sets: 3, reps: 15 },
+      { name: "Reverse Wrist Curl - ساعد", sets: 3, reps: 15 },
+
+      // One exercise per major muscle
+      { name: "Chest Press Machine - صدر", sets: 3, reps: 12 },
+      { name: "Lat Pulldown - ظهر", sets: 3, reps: 12 },
+      { name: "Leg Press - أرجل", sets: 3, reps: 12 },
+      { name: "Shoulder Press Machine - أكتاف", sets: 3, reps: 12 }
+    ]
   },
 
   day6: {
     title: "Cardio",
-    exercises: [],
-    cardio: {
-      elliptical: "10-15 min",
-      treadmill: "25-40 min"
-    }
+    exercises: [
+      {
+        name: "Treadmill",
+        duration: "30-45 min",
+        speed: "5.5",
+        incline: "4"
+      }
+    ]
   },
 
   day7: {
-    title: "Full Body",
+    title: "Cardio",
     exercises: [
-      { name: "Chest Press Machine - صدر مستوي", sets: 3, reps: 12 },
-      { name: "Lat Pulldown - سحب ظهر علوي", sets: 3, reps: 12 },
-      { name: "Leg Press - دفع أرجل (أفخاذ عام)", sets: 3, reps: 12 },
-      { name: "Shoulder Press Machine - أكتاف أمامي", sets: 3, reps: 12 },
-      { name: "Bicep Curl - بايسبس عزل", sets: 3, reps: 12 },
-      { name: "Tricep Pushdown - ترايسبس عزل", sets: 3, reps: 12 }
-    ],
-    cardio: {
-      treadmill: "20 min"
-    }
+      {
+        name: "Treadmill",
+        duration: "30-45 min",
+        speed: "5.5",
+        incline: "4"
+      }
+    ]
   }
 };
 
-// Map of day identifiers to Arabic names and focuses
 const dayMetadata = {
-  day1: { name: "الجمعة", focus: "صدر + أكتاف + تراي" },
-  day2: { name: "السبت", focus: "كارديو فقط" },
-  day3: { name: "الأحد", focus: "أرجل + بطن" },
-  day4: { name: "الاثنين", focus: "كارديو فقط" },
-  day5: { name: "الثلاثاء", focus: "ظهر + باي + تراي" },
-  day6: { name: "الأربعاء", focus: "كارديو فقط" },
-  day7: { name: "الخميس", focus: "فل بودي" }
+  day1: { name: "الأحد", focus: "صدر + ترايسبس" },
+  day2: { name: "الاثنين", focus: "ظهر + بايسبس" },
+  day3: { name: "الثلاثاء", focus: "أرجل" },
+  day4: { name: "الأربعاء", focus: "أكتاف" },
+  day5: { name: "الخميس", focus: "فل أرمز + تمرين لكل عضلة" },
+  day6: { name: "الجمعة", focus: "كارديو" },
+  day7: { name: "السبت", focus: "كارديو" }
 };
 
 // 2. STATE VARIABLES
@@ -124,7 +131,7 @@ function initApp() {
     checkScheduledReminder();
 }
 
-const CURRENT_PLAN_VERSION = 'v8_targeted_muscles';
+const CURRENT_PLAN_VERSION = 'v9_sunday_start';
 
 // Make sure every day has a state saved in localStorage.
 // Uses user's required naming convention: 'workout-data-day1', 'workout-data-day2', etc.
@@ -217,15 +224,15 @@ function setupDefaultDayStates() {
 function setSelectedDayToCurrent() {
     const jsDay = new Date().getDay(); // 0 is Sun, 1 is Mon...
     // Map JS days to our plan days:
-    // day1: Friday (5), day2: Saturday (6), day3: Sunday (0), day4: Monday (1), day5: Tuesday (2), day6: Wednesday (3), day7: Thursday (4)
+    // day1: Sunday (0), day2: Monday (1), day3: Tuesday (2), day4: Wednesday (3), day5: Thursday (4), day6: Friday (5), day7: Saturday (6)
     const dayMapping = {
-        5: 'day1', // Friday
-        6: 'day2', // Saturday
-        0: 'day3', // Sunday
-        1: 'day4', // Monday
-        2: 'day5', // Tuesday
-        3: 'day6', // Wednesday
-        4: 'day7'  // Thursday
+        0: 'day1', // Sunday
+        1: 'day2', // Monday
+        2: 'day3', // Tuesday
+        3: 'day4', // Wednesday
+        4: 'day5', // Thursday
+        5: 'day6', // Friday
+        6: 'day7'  // Saturday
     };
     
     activeDayId = dayMapping[jsDay] || 'day1';
